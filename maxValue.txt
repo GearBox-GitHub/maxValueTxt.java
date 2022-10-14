@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.Scanner;
+
+//The numbers have to seperated by blank spaces.
+
+public class Lector {
+    
+    public void maxValueText() throws FileNotFoundException{
+        
+        Scanner file = new Scanner(new File("file.txt"));
+        int max = file.nextInt();
+        while(file.hasNextInt()) {
+            int num = file.nextInt();
+            if(num > max) {
+                max = num;
+            }
+        }
+        file.close();
+        System.out.println("Max value: " + max);
+    }
+}
